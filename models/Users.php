@@ -3,8 +3,6 @@
 namespace app\models;
 
 use Yii;
-use yii\helpers\VarDumper;
-use yii\log\Logger;
 
 
 /**
@@ -18,6 +16,7 @@ use yii\log\Logger;
  */
 class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
+
     /**
      * {@inheritdoc}
      */
@@ -64,7 +63,15 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public static function findIdentity($id)
     {
-        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
+        $query = self::find();
+        $query->where(['id' => $id]);
+
+        //Return first result length > 0
+        if($query->count() > 0){
+            return new static($query->one());
+        }
+
+        return null;
     }
 
     /**
@@ -89,7 +96,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public static function findByUsername($username)
     {
-        $query = Users::find();
+        $query = self::find();
         $query->where(['username' => $username]);
 
         //Return first result length > 0
@@ -97,8 +104,7 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             return new static($query->one());
         }
 
-        //No match = return false
-        return false;
+        return null;
     }
 
     /**
