@@ -32,8 +32,9 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         return [
             [['id'], 'integer'],
-            [['username', 'password'], 'required'],
-            [['username', 'password'], 'string', 'max' => 45],
+            [['username'], 'required'],
+            [['is_admin'], 'boolean'],
+            [['username', 'password'], 'string', 'min' => 3, 'max' => 45],
             [['id'], 'unique'],
         ];
     }
@@ -150,11 +151,30 @@ class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public function beforeSave($insert)
     {
-        if ($this->isNewRecord) {
+        if($this->isNewRecord) {
             $this->auth_key = Yii::$app->getSecurity()->generateRandomString();
         }
 
-        $this->password = Yii::$app->getSecurity()->generatePasswordHash($this->password);
+        //password empty && existing record? do not change password.
+        if(empty($this->password) && !$this->isNewRecord){
+            unset($this->password);
+        }
+
+        //password empty && new record? return false and prevent empty password
+        else if(empty($this->password) && $this->isNewRecord){
+            return false;
+        }
+
+        //else: save password as hash
+        else{
+            $this->password = Yii::$app->getSecurity()->generatePasswordHash($this->password);
+        }
+
         return parent::beforeSave($insert);
+    }
+
+    public function getUsertypeLabel()
+    {
+        return $this->is_admin ? 'Admin' : 'User';
     }
 }

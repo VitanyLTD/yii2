@@ -38,23 +38,32 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Meals', 'url' => ['/meals/index']],
             ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    'Logout (' . ucwords(strtolower(Yii::$app->user->identity->username)) . ', ' . Yii::$app->user->identity->getUsertypeLabel() .')',
                     ['class' => 'btn btn-link logout']
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            ),
         ],
     ]);
+
+    if(isset(Yii::$app->user->identity->is_admin) && Yii::$app->user->identity->is_admin == 1){
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => [
+                ['label' => 'Users', 'url' => ['/user/index']],
+                ['label' => 'Additions', 'url' => ['/addition/index']],
+            ],
+        ]);
+    }
     NavBar::end();
     ?>
 

@@ -32,7 +32,7 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'meal_id'], 'required'],
+            [['id', 'user_id', 'meal_id'], 'required'],
             [['id', 'user_id', 'meal_id'], 'integer'],
             [['id', 'user_id', 'meal_id'], 'unique', 'targetAttribute' => ['id', 'user_id', 'meal_id']],
             [['meal_id'], 'exist', 'skipOnError' => true, 'targetClass' => Meals::className(), 'targetAttribute' => ['meal_id' => 'id']],
@@ -82,5 +82,14 @@ class Orders extends \yii\db\ActiveRecord
     public function getAdditions()
     {
         return $this->hasMany(Additions::className(), ['id' => 'additions_id'])->viaTable('orders_has_additions', ['orders_id' => 'id']);
+    }
+
+    public function getAdditionsAsString()
+    {
+        $ret = "";
+        foreach($this->getAdditions()->all() as $addition){
+            $ret .= '<p>' . $addition->description . '</p>';
+        }
+        return $ret;
     }
 }

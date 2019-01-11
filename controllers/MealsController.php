@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\OrderSearch;
 use Yii;
 use app\models\Meals;
 use app\models\MealsSearch;
@@ -52,8 +53,13 @@ class MealsController extends Controller
      */
     public function actionView($id)
     {
+        $searchModel = new OrderSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider
         ]);
     }
 

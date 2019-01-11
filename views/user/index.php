@@ -25,9 +25,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'username',
             'password',
+            [
+                'attribute' => 'is_admin',
+                'value' => function ($model) {
+                    return $model->is_admin ? 'Yes' : 'No';
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

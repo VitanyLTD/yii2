@@ -1,5 +1,6 @@
 <?php
 
+use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -29,10 +30,26 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'user_id',
-            'meal_id',
+            'user.username',
+            'meal.start_date',
+            [
+                'attribute' => 'status',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return $model->getAdditionsAsString();
+                },
+            ],
         ],
     ]) ?>
+
+<!--     GridView::widget([-->
+<!--        'dataProvider' => $dataProvider,-->
+<!--        'columns' => [-->
+<!--            ['class' => 'yii\grid\SerialColumn'],-->
+<!---->
+<!--            'description',-->
+<!--            'additionType.description',-->
+<!--        ],-->
+<!--    ]);-->
 
 </div>

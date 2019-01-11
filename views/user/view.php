@@ -29,8 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'username',
+            [
+                'attribute' => 'is_admin',
+                'value' => function ($model) {
+                    return $model->is_admin ? 'Yes' : 'No';
+                },
+            ],
             'password',
         ],
     ]) ?>

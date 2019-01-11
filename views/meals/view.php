@@ -1,5 +1,8 @@
 <?php
 
+use app\models\Additions;
+use app\models\Orders;
+use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -29,11 +32,42 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'start_date',
             'end_date',
-            'status',
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    return $model->status == 1 ? 'Open' : 'Closed';
+                },
+            ],
         ],
     ]) ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            'user.username',
+            [
+                'attribute' => 'additions',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return $model->getAdditionsAsString();
+                },
+            ],
+            [
+                'attribute'=>   'actions',
+                'label'=>'Actions',
+                'format' => 'raw',
+                'value' => function($data){
+                    $add_url = Yii::$app->urlManager->createUrl('order/view')."&id=".$data->id."&user_id=".$data->user_id."&meal_id=".$data->meal_id;
+                    $del_url = Yii::$app->urlManager->createUrl('order/delete')."&id=".$data->id."&user_id=".$data->user_id."&meal_id=".$data->meal_id;
+                    return '<a class="btn btn-primary" href="'.$add_url.'" title="Edit">Edit</a>
+                            <a class="btn btn-danger" href="'.$del_url.'" data-confirm="Are you sure you want to delete this item?" data-method="post">Delete</a>';
+                }
+
+            ],
+        ],
+    ]); ?>
 
 </div>

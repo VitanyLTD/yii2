@@ -28,7 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'start_date',
             'end_date',
-            'status',
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    return $model->status == 1 ? 'Open' : 'Closed';
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
