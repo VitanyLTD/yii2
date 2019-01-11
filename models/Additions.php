@@ -31,7 +31,7 @@ class Additions extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'addition_type_id'], 'required'],
+            [['addition_type_id'], 'required'],
             [['id', 'addition_type_id'], 'integer'],
             [['description'], 'string', 'max' => 45],
             [['id', 'addition_type_id'], 'unique', 'targetAttribute' => ['id', 'addition_type_id']],

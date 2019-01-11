@@ -32,7 +32,7 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'user_id', 'meal_id'], 'required'],
+            [['user_id', 'meal_id'], 'required'],
             [['id', 'user_id', 'meal_id'], 'integer'],
             [['id', 'user_id', 'meal_id'], 'unique', 'targetAttribute' => ['id', 'user_id', 'meal_id']],
             [['meal_id'], 'exist', 'skipOnError' => true, 'targetClass' => Meals::className(), 'targetAttribute' => ['meal_id' => 'id']],

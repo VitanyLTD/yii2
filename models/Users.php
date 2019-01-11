@@ -3,6 +3,9 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\VarDumper;
+use yii\log\Logger;
+
 
 /**
  * This is the model class for table "users".
@@ -13,7 +16,7 @@ use Yii;
  *
  * @property Orders[] $orders
  */
-class Users extends \yii\db\ActiveRecord
+class Users extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
     /**
      * {@inheritdoc}
@@ -29,8 +32,8 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
             [['id'], 'integer'],
+            [['username', 'password'], 'required'],
             [['username', 'password'], 'string', 'max' => 45],
             [['id'], 'unique'],
         ];
@@ -54,5 +57,98 @@ class Users extends \yii\db\ActiveRecord
     public function getOrders()
     {
         return $this->hasMany(Orders::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function findIdentity($id)
+    {
+        return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        foreach (self::$users as $user) {
+            if ($user['accessToken'] === $token) {
+                return new static($user);
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Finds user by username
+     *
+     * @param string $username
+     * @return static|null
+     */
+    public static function findByUsername($username)
+    {
+        $query = Users::find();
+        $query->where(['username' => $username]);
+
+        //Return first result length > 0
+        if($query->count() > 0){
+            return new static($query->one());
+        }
+
+        //No match = return false
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAuthKey()
+    {
+        return $this->auth_key;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function validateAuthKey($authKey)
+    {
+        return $this->authKey === $authKey;
+    }
+
+    /**
+     * Validates password
+     *
+     * @param string $password password to validate
+     * @return bool if password provided is valid for current user
+     * @throws \yii\base\Exception
+     */
+    public function validatePassword($password)
+    {
+        //$hash = Yii::$app->getSecurity()->generatePasswordHash($password);
+        return Yii::$app->getSecurity()->validatePassword($password, $this->password);
+    }
+
+
+    /**
+     * @inheritdoc
+     */
+    public function beforeSave($insert)
+    {
+        if ($this->isNewRecord) {
+            $this->auth_key = Yii::$app->getSecurity()->generateRandomString();
+        }
+
+        $this->password = Yii::$app->getSecurity()->generatePasswordHash($this->password);
+        return parent::beforeSave($insert);
     }
 }

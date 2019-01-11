@@ -29,7 +29,6 @@ class AdditionTypes extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
             [['id', 'multiselector'], 'integer'],
             [['description'], 'string', 'max' => 45],
             [['id'], 'unique'],

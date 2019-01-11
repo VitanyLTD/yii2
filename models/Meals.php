@@ -30,7 +30,6 @@ class Meals extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
             [['id', 'status'], 'integer'],
             [['start_date', 'end_date'], 'safe'],
             [['id'], 'unique'],
