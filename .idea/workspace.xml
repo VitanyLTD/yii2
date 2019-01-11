@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="215c7037-0df1-4a46-ab5c-f4fe8a1bc71c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/controllers/MealsController.php" afterPath="$PROJECT_DIR$/controllers/MealsController.php" />
-      <change beforePath="$PROJECT_DIR$/controllers/OrderController.php" afterPath="$PROJECT_DIR$/controllers/OrderController.php" />
-      <change beforePath="$PROJECT_DIR$/models/Orders.php" afterPath="$PROJECT_DIR$/models/Orders.php" />
-      <change beforePath="$PROJECT_DIR$/models/Users.php" afterPath="$PROJECT_DIR$/models/Users.php" />
-      <change beforePath="$PROJECT_DIR$/views/addition/_form.php" afterPath="$PROJECT_DIR$/views/addition/_form.php" />
-      <change beforePath="$PROJECT_DIR$/views/addition/index.php" afterPath="$PROJECT_DIR$/views/addition/index.php" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/main.php" afterPath="$PROJECT_DIR$/views/layouts/main.php" />
-      <change beforePath="$PROJECT_DIR$/views/meals/_form.php" afterPath="$PROJECT_DIR$/views/meals/_form.php" />
-      <change beforePath="$PROJECT_DIR$/views/meals/index.php" afterPath="$PROJECT_DIR$/views/meals/index.php" />
-      <change beforePath="$PROJECT_DIR$/views/meals/view.php" afterPath="$PROJECT_DIR$/views/meals/view.php" />
-      <change beforePath="$PROJECT_DIR$/views/order/view.php" afterPath="$PROJECT_DIR$/views/order/view.php" />
-      <change beforePath="$PROJECT_DIR$/views/user/_form.php" afterPath="$PROJECT_DIR$/views/user/_form.php" />
-      <change beforePath="$PROJECT_DIR$/views/user/index.php" afterPath="$PROJECT_DIR$/views/user/index.php" />
-      <change beforePath="$PROJECT_DIR$/views/user/view.php" afterPath="$PROJECT_DIR$/views/user/view.php" />
-    </list>
+    <list default="true" id="215c7037-0df1-4a46-ab5c-f4fe8a1bc71c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -275,12 +259,12 @@
       <option name="presentableId" value="Default" />
       <updated>1546266806919</updated>
       <workItem from="1546266808260" duration="2161000" />
-      <workItem from="1547207087480" duration="23607000" />
+      <workItem from="1547207087480" duration="23717000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25768000" />
+    <option name="totallyTimeSpent" value="25878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="745" extended-state="6" />
