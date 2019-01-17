@@ -1,7 +1,9 @@
 <?php
 
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -42,14 +44,24 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-<!--     GridView::widget([-->
-<!--        'dataProvider' => $dataProvider,-->
-<!--        'columns' => [-->
-<!--            ['class' => 'yii\grid\SerialColumn'],-->
-<!---->
-<!--            'description',-->
-<!--            'additionType.description',-->
-<!--        ],-->
-<!--    ]);-->
+
+    <?php
+        $form = ActiveForm::begin();
+
+        //Loop through all additionTypes
+        foreach($modelAdditionTypes->find()->all() as $additionTypeModel){
+
+            //Print description + values
+            echo $form->field($model, 'additions[id]')
+                ->dropDownList(ArrayHelper::map($additionTypeModel->getAdditions()->asArray()->all(), 'id','description'),
+                    [
+                        'multiple'=>($additionTypeModel->multiselector == 1),
+                        'prompt'=>'- Select '.$additionTypeModel->description.' -',
+                        'class'=>'chosen-select input-md required',
+                    ]
+                )->label($additionTypeModel->description);
+        }
+        ActiveForm::end();
+    ?>
 
 </div>
