@@ -54,9 +54,45 @@ class OrderController extends Controller
      * @param integer $meal_id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
+     * @throws \yii\db\Exception
      */
     public function actionView($id, $user_id, $meal_id)
     {
+        $request = Yii::$app->request;
+
+        //$get = $request->get();
+        if($request->post('Orders')['additions'] != null){
+            $data = [];
+            $order_id = $request->get('id');
+
+            //Start by deleting the old additions
+            Yii::$app->db
+                ->createCommand()
+                ->delete('orders_has_additions', ['orders_id' => $order_id])
+                ->execute();
+
+            foreach($request->post('Orders')['additions'] as $addition){
+                if(gettype($addition) == 'array'){
+                    foreach($addition as $nestedAddition){
+                        if($nestedAddition != null){
+                            $data[] = [$order_id,$nestedAddition];
+                        }
+                    }
+                }
+                else {
+                    if($addition != null) {
+                        $data[] = [$order_id, $addition];
+                    }
+                }
+
+            }
+
+            //Insert new additions
+            Yii::$app->db
+                ->createCommand()
+                ->batchInsert('orders_has_additions', ['orders_id','additions_id'],$data)
+                ->execute();
+        }
         $modelAdditions = new Additions();
         $modelAdditionTypes = new AdditionTypes();
         $searchModel = new AdditionSearch();

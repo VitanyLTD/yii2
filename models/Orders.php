@@ -88,7 +88,7 @@ class Orders extends \yii\db\ActiveRecord
     {
         $ret = "";
         foreach($this->getAdditions()->all() as $addition){
-            $ret .= '<p>' . $addition->description . '</p>';
+            $ret .= '<p><b>' . $addition->getAdditionType()->one()->description . '</b>: ' . $addition->description . '</p>';
         }
         return $ret;
     }

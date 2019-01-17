@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="meals-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1>Meal of <?= Yii::$app->formatter->format($model->start_date, 'relativeTime') ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
