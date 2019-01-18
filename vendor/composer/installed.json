@@ -85,6 +85,58 @@
         ]
     },
     {
+        "name": "bower-asset/chosen",
+        "version": "v1.4.2",
+        "version_normalized": "1.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/harvesthq/chosen-package.git",
+            "reference": "d7eba35cf214d2416fabee25c5d4619542a23d8d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/harvesthq/chosen-package/zipball/d7eba35cf214d2416fabee25c5d4619542a23d8d",
+            "reference": "d7eba35cf214d2416fabee25c5d4619542a23d8d",
+            "shasum": null
+        },
+        "require": {
+            "bower-asset/jquery": ">=1.4.4"
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            {
+                "type": "MIT",
+                "url": "https://github.com/harvesthq/chosen/blob/master/LICENSE.md"
+            }
+        ]
+    },
+    {
+        "name": "bower-asset/chosen-bootstrap",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dbtek/chosen-bootstrap.git",
+            "reference": "12dcd363d1482c54c740ed9fe0e92549d81e9176"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dbtek/chosen-bootstrap/zipball/12dcd363d1482c54c740ed9fe0e92549d81e9176",
+            "reference": "12dcd363d1482c54c740ed9fe0e92549d81e9176",
+            "shasum": null
+        },
+        "require": {
+            "bower-asset/bootstrap": ">=3.0.0",
+            "bower-asset/chosen": "~1.4.0"
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
         "name": "bower-asset/inputmask",
         "version": "3.3.11",
         "version_normalized": "3.3.11.0",
@@ -777,6 +829,55 @@
             "duplicate",
             "object",
             "object graph"
+        ]
+    },
+    {
+        "name": "nex/yii2-chosen",
+        "version": "v1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/RomeroMsk/yii2-chosen.git",
+            "reference": "0ba2b13421130b77cc0ab12a4b0b9cc71bbfd560"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/RomeroMsk/yii2-chosen/zipball/0ba2b13421130b77cc0ab12a4b0b9cc71bbfd560",
+            "reference": "0ba2b13421130b77cc0ab12a4b0b9cc71bbfd560",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/chosen-bootstrap": "1.1.*",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2016-06-07T15:49:37+00:00",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "nex\\chosen\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD 3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Roman Ovchinnikov",
+                "email": "nex.software@gmail.com",
+                "homepage": "https://github.com/RomeroMsk"
+            }
+        ],
+        "description": "Bootstrap Chosen widget for Yii2",
+        "homepage": "https://github.com/RomeroMsk/yii2-chosen",
+        "keywords": [
+            "bootstrap",
+            "bootstrap 3",
+            "chosen",
+            "extension",
+            "widget",
+            "yii2"
         ]
     },
     {

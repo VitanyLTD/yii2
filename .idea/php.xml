@@ -67,6 +67,9 @@
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/nex/yii2-chosen" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/chosen" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/chosen-bootstrap" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

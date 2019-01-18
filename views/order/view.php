@@ -1,5 +1,6 @@
 <?php
 
+use nex\chosen\Chosen;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -32,37 +33,24 @@ $this->params['breadcrumbs'][] = Html::encode($model->getUser()->one()->username
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']); ?>
     </p>
 
-<!--    DetailView::widget([-->
-<!--        'model' => $model,-->
-<!--        'attributes' => [-->
-<!--            'user.username',-->
-<!--            'meal.start_date',-->
-<!--            [-->
-<!--                'attribute' => 'status',-->
-<!--                'format' => 'raw',-->
-<!--                'value' => function ($model) {-->
-<!--                    return $model->getAdditionsAsString();-->
-<!--                },-->
-<!--            ],-->
-<!--        ],-->
-<!--    ]) -->
-
 
     <?php
         //Loop through all additionTypes
         foreach($modelAdditionTypes->find()->all() as $additionTypeModel){
-
             //Print description + values
-            echo $form->field($model, 'additions[' . $additionTypeModel->id . ']')
-                ->dropDownList(ArrayHelper::map($additionTypeModel->getAdditions()->asArray()->all(), 'id','description'),
-                    [
-                        'multiple'=>($additionTypeModel->multiselector == 1),
-                        'prompt'=>'- Select '.$additionTypeModel->description.' -',
-                        'class'=>'chosen-select input-md required',
-                    ]
-                )->label($additionTypeModel->description);
+            echo Chosen::widget([
+                'name' => 'additions[' . $additionTypeModel->id . ']',
+                'items' => ArrayHelper::map($additionTypeModel->getAdditions()->asArray()->all(), 'id','description'),
+                'multiple' => ($additionTypeModel->multiselector == 1),
+                'allowDeselect' => false,
+                'disableSearch' => true, // Search input will be disabled
+                'placeholder' => 'Select ' . $additionTypeModel->description,
+                'noResultsText' => 'No ' . $additionTypeModel->description . ' available',
+                'value' => ArrayHelper::getColumn($model->getAdditions()->select('id')->where(['addition_type_id' => $additionTypeModel->id])->asArray()->all(), 'id')
+            ]);
         }
         ?>
+
 
     <div class="form-group">
 

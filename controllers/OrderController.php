@@ -60,8 +60,9 @@ class OrderController extends Controller
     {
         $request = Yii::$app->request;
 
+        //return print_r($request->post('additions'));
         //$get = $request->get();
-        if($request->post('Orders')['additions'] != null){
+        if($request->post('additions') != null){
             $data = [];
             $order_id = $request->get('id');
 
@@ -71,7 +72,7 @@ class OrderController extends Controller
                 ->delete('orders_has_additions', ['orders_id' => $order_id])
                 ->execute();
 
-            foreach($request->post('Orders')['additions'] as $addition){
+            foreach($request->post('additions') as $addition){
                 if(gettype($addition) == 'array'){
                     foreach($addition as $nestedAddition){
                         if($nestedAddition != null){
@@ -86,6 +87,8 @@ class OrderController extends Controller
                 }
 
             }
+
+            //return print_r($data);
 
             //Insert new additions
             Yii::$app->db

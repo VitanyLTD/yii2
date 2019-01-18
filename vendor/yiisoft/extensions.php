@@ -48,4 +48,13 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'nex/yii2-chosen' => 
+  array (
+    'name' => 'nex/yii2-chosen',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@nex/chosen' => $vendorDir . '/nex/yii2-chosen',
+    ),
+  ),
 );

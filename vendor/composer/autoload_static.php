@@ -32,6 +32,10 @@ class ComposerStaticInit5bc48ff80ca5ef4ae9a2ef29d691f0b1
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'n' => 
+        array (
+            'nex\\chosen\\' => 11,
+        ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
@@ -112,6 +116,10 @@ class ComposerStaticInit5bc48ff80ca5ef4ae9a2ef29d691f0b1
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'nex\\chosen\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nex/yii2-chosen',
         ),
         'cebe\\markdown\\' => 
         array (
