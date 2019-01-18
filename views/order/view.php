@@ -11,9 +11,9 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Orders */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Meals', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => 'Orders'];
-$this->params['breadcrumbs'][] = Html::encode($model->getUser()->one()->username);
+$this->params['breadcrumbs'][] = ['label' => 'Meals', 'url' => ['meals/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Meal #' . $model->getMeal()->one()->id, 'url' => ['meals/view','id' => $model->getMeal()->one()->id]];
+$this->params['breadcrumbs'][] = Html::encode(ucwords(strtolower($model->getUser()->one()->username))) . '\'s order';
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="orders-view">
@@ -37,24 +37,22 @@ $this->params['breadcrumbs'][] = Html::encode($model->getUser()->one()->username
     <?php
         //Loop through all additionTypes
         foreach($modelAdditionTypes->find()->all() as $additionTypeModel){
+            echo "<label class=\"custom-file-label\" for=\"addition-{$additionTypeModel->id}\">Choose {$additionTypeModel->description}" . ($additionTypeModel->multiselector == 1 ? 's ' : '') . "</label>";
+
             //Print description + values
             echo Chosen::widget([
                 'name' => 'additions[' . $additionTypeModel->id . ']',
+                'id' => 'addition-' . $additionTypeModel->id,
                 'items' => ArrayHelper::map($additionTypeModel->getAdditions()->asArray()->all(), 'id','description'),
                 'multiple' => ($additionTypeModel->multiselector == 1),
                 'allowDeselect' => false,
                 'disableSearch' => true, // Search input will be disabled
-                'placeholder' => 'Select ' . $additionTypeModel->description,
+                'placeholder' => 'Select ' . ($additionTypeModel->multiselector == 1 ? 'multiple ' : '') . $additionTypeModel->description . ($additionTypeModel->multiselector == 1 ? 's ' : ''),
                 'noResultsText' => 'No ' . $additionTypeModel->description . ' available',
                 'value' => ArrayHelper::getColumn($model->getAdditions()->select('id')->where(['addition_type_id' => $additionTypeModel->id])->asArray()->all(), 'id')
             ]);
         }
         ?>
-
-
-    <div class="form-group">
-
-    </div>
     <?php
         ActiveForm::end();
     ?>

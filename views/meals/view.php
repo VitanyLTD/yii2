@@ -11,7 +11,7 @@ use yii\widgets\DetailView;
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Meals', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = 'Meal #' . $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="meals-view">

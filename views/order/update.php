@@ -7,9 +7,8 @@ use yii\helpers\Html;
 
 $this->title = 'Settings of order ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Meals', 'url' => ['meals/index']];
-$this->params['breadcrumbs'][] = ['label' => 'Orders'];
-$this->params['breadcrumbs'][] = Html::encode($model->getUser()->one()->username);
-$this->params['breadcrumbs'][] = 'Settings';
+$this->params['breadcrumbs'][] = ['label' => 'Meal #' . $model->getMeal()->one()->id, 'url' => ['meals/view','id' => $model->getMeal()->one()->id]];
+$this->params['breadcrumbs'][] = 'Settings of ' . Html::encode(ucwords(strtolower($model->getUser()->one()->username))) . '\'s order';
 ?>
 <div class="orders-update">
 
@@ -17,6 +16,8 @@ $this->params['breadcrumbs'][] = 'Settings';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'modelUsers' => $modelUsers,
+        'modelMeals' => $modelMeals
     ]) ?>
 
 </div>

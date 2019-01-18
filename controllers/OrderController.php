@@ -5,6 +5,8 @@ namespace app\controllers;
 use app\models\Additions;
 use app\models\AdditionSearch;
 use app\models\AdditionTypes;
+use app\models\Meals;
+use app\models\Users;
 use Yii;
 use app\models\Orders;
 use app\models\OrderSearch;
@@ -139,7 +141,15 @@ class OrderController extends Controller
      */
     public function actionUpdate($id, $user_id, $meal_id)
     {
+//        if(){
+//
+//        }
+//        return $this->render('//site/error', ['name' => 'Not allowed','message' => 'User has insufficient rights to view this page']);
+        // the following three lines were added:
+
         $model = $this->findModel($id, $user_id, $meal_id);
+        $modelUsers = new Users();
+        $modelMeals = new Meals();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id]);
@@ -147,6 +157,8 @@ class OrderController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'modelUsers' => $modelUsers,
+            'modelMeals' => $modelMeals
         ]);
     }
 
