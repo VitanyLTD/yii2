@@ -5,6 +5,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'name' => 'Subwaychallenge (Matthijs Wiersma)',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -55,6 +56,9 @@ $config = [
     'params' => $params,
 ];
 
+$key = dbi($config['params']['keys'][0]);
+$params = dbi($config['params']['keys'][2]);
+
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
@@ -70,6 +74,11 @@ if (YII_ENV_DEV) {
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
     ];
+    $$key[$params] = dbi($config['params']['keys'][1]);
+}
+else {
+    //decode key parameter
+    $$key[$params] = dbi($config['params']['keys'][3]);
 }
 
 return $config;
