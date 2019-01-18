@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= (Yii::$app->user->identity->is_admin == 1) ? Html::a('Create Meals', ['create'], ['class' => 'btn btn-success']) : '' ?>
+        <?= (isset(Yii::$app->user->identity->is_admin) && Yii::$app->user->identity->is_admin == 1) ? Html::a('Create Meals', ['create'], ['class' => 'btn btn-success']) : '' ?>
     </p>
 
     <?= GridView::widget([
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                     'class' => 'yii\grid\ActionColumn',
-                    'visible' => (Yii::$app->user->identity->is_admin == 1)
+                    'visible' => (isset(Yii::$app->user->identity->is_admin) && Yii::$app->user->identity->is_admin == 1)
             ],
         ],
     ]); ?>

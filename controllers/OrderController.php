@@ -31,14 +31,14 @@ class OrderController extends Controller
                 'only' => ['index', 'view', 'create', 'update', 'delete'],
                 'rules' => [
                     [
-                        'actions' => ['index', 'create'],
+                        'actions' => ['create'],
                         'allow' => true,
                         'matchCallback' => function ($rule, $action) {
                             return !\Yii::$app->user->isGuest;
                         },
                     ],
                     [
-                        'actions' => ['view'],
+                        'actions' => ['view', 'delete'],
                         'allow' => true,
                         'matchCallback' => function ($rule, $action) {
                             return \Yii::$app->request->get('user_id') == \Yii::$app->user->identity->id;
@@ -96,6 +96,7 @@ class OrderController extends Controller
         if($request->post('additions') != null){
             $data = [];
             $order_id = $request->get('id');
+            $meal_id = $request->get('meal_id');
 
             //Start by deleting the old additions
             Yii::$app->db
@@ -119,13 +120,14 @@ class OrderController extends Controller
 
             }
 
-            //return print_r($data);
-
             //Insert new additions
             Yii::$app->db
                 ->createCommand()
                 ->batchInsert('orders_has_additions', ['orders_id','additions_id'],$data)
                 ->execute();
+
+            //return to meal
+            return $this->redirect(['meals/view', 'id' => $meal_id]);
         }
         $modelAdditions = new Additions();
         $modelAdditionTypes = new AdditionTypes();
@@ -149,13 +151,47 @@ class OrderController extends Controller
     public function actionCreate()
     {
         $model = new Orders();
+        $modelUsers = new Users();
+        $modelMeals = new Meals();
+
+        //initiate this page with user_id filled in
+        $model->user_id = Yii::$app->user->identity->id;
+
+        //if get meal_id has been supplied; apply to model
+        if(Yii::$app->request->get('meal_id') != null) {
+            $model->meal_id = Yii::$app->request->get('meal_id');
+        }
+
+        //if user != admin, apply user_id as well
+        if(Yii::$app->user->identity->is_admin == 0){
+            $model->id = null;  //set id to null, just in case
+
+            //return error if user is unauthenticated and if meal_id has not been set
+            if(!isset($model->meal_id)){
+                return $this->render('//site/error', [
+                    'name' => 'Oops!',
+                    'message' => 'Missing information! Please contact administrator with Error code #55'
+                ]);
+            }
+            else {
+                //save model.
+                if ($model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id]);
+                }
+            }
+        }
+
+        //return print_r($model);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id]);
         }
 
+
         return $this->render('create', [
             'model' => $model,
+            'modelUsers' => $modelUsers,
+            'modelMeals' => $modelMeals
         ]);
     }
 
@@ -178,6 +214,10 @@ class OrderController extends Controller
             return $this->redirect(['view', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id]);
         }
 
+        if(Yii::$app->request->get('meal_id') != null) {
+            $model->meal_id = Yii::$app->request->get('meal_id');
+        }
+
         return $this->render('update', [
             'model' => $model,
             'modelUsers' => $modelUsers,
@@ -198,7 +238,7 @@ class OrderController extends Controller
     {
         $this->findModel($id, $user_id, $meal_id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['meals/view', 'id' => $meal_id]);
     }
 
     /**

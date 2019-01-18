@@ -19,10 +19,13 @@ $this->params['breadcrumbs'][] = 'Meal #' . $this->title;
     <h1>Meal of <?= Yii::$app->formatter->format($model->start_date, 'relativeTime') ?></h1>
 
     <p>
-        <?= (Yii::$app->user->identity->is_admin == 1) ?
+        <?= (!Yii::$app->user->isGuest) ?
+            Html::a('Add order', ['order/create', 'meal_id' => $model->id], ['class' => 'btn btn-primary']) : '' ?>
+
+        <?= (!Yii::$app->user->isGuest && Yii::$app->user->identity->is_admin == 1) ?
             Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) : '' ?>
 
-        <?= (Yii::$app->user->identity->is_admin == 1) ?
+        <?= (!Yii::$app->user->isGuest && Yii::$app->user->identity->is_admin == 1) ?
             Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -63,7 +66,7 @@ $this->params['breadcrumbs'][] = 'Meal #' . $this->title;
                 'label'=>'Actions',
                 'format' => 'raw',
                 'value' => function($data) {
-                    if (Yii::$app->user->identity->is_admin == 1 || Yii::$app->user->identity->id == $data->user_id) {
+                    if (!Yii::$app->user->isGuest && (Yii::$app->user->identity->is_admin == 1 || Yii::$app->user->identity->id == $data->user_id)) {
                         $add_url = Yii::$app->urlManager->createUrl('order/view') . "&id=" . $data->id . "&user_id=" . $data->user_id . "&meal_id=" . $data->meal_id;
                         $del_url = Yii::$app->urlManager->createUrl('order/delete') . "&id=" . $data->id . "&user_id=" . $data->user_id . "&meal_id=" . $data->meal_id;
                         return '<a class="btn btn-primary" href="' . $add_url . '" title="Edit">Edit</a>

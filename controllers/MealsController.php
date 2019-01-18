@@ -28,10 +28,7 @@ class MealsController extends Controller
                 'rules' => [
                     [
                         'actions' => ['index', 'view'],
-                        'allow' => true,
-                        'matchCallback' => function ($rule, $action) {
-                            return !\Yii::$app->user->isGuest;
-                        },
+                        'allow' => true
                     ],
                     [
                         'actions' => ['index', 'view', 'create', 'update', 'delete'],
@@ -76,7 +73,7 @@ class MealsController extends Controller
     public function actionView($id)
     {
         $searchModel = new OrderSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(['OrderSearch' => ['id' => null,'user_id'=> null, 'meal_id' => $id]]);
 
         return $this->render('view', [
             'model' => $this->findModel($id),
