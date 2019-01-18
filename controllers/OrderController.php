@@ -170,12 +170,6 @@ class OrderController extends Controller
      */
     public function actionUpdate($id, $user_id, $meal_id)
     {
-//        if(){
-//
-//        }
-//        return $this->render('//site/error', ['name' => 'Not allowed','message' => 'User has insufficient rights to view this page']);
-        // the following three lines were added:
-
         $model = $this->findModel($id, $user_id, $meal_id);
         $modelUsers = new Users();
         $modelMeals = new Meals();

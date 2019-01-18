@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="215c7037-0df1-4a46-ab5c-f4fe8a1bc71c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/controllers/OrderController.php" afterPath="$PROJECT_DIR$/controllers/OrderController.php" />
-      <change beforePath="$PROJECT_DIR$/views/meals/index.php" afterPath="$PROJECT_DIR$/views/meals/index.php" />
-      <change beforePath="$PROJECT_DIR$/views/meals/view.php" afterPath="$PROJECT_DIR$/views/meals/view.php" />
-      <change beforePath="$PROJECT_DIR$/views/order/view.php" afterPath="$PROJECT_DIR$/views/order/view.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="51" column="76" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="76" />
+            <state relative-caret-position="260">
+              <caret line="181" column="30" lean-forward="true" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
               <folding>
                 <element signature="e#35#60#0#PHP" expanded="true" />
               </folding>
@@ -64,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/meals/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+            <state relative-caret-position="215">
+              <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -97,7 +93,7 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="149">
               <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
               <folding />
             </state>
@@ -180,11 +176,11 @@
         <option value="$PROJECT_DIR$/controllers/MealsController.php" />
         <option value="$PROJECT_DIR$/controllers/AdditionController.php" />
         <option value="$PROJECT_DIR$/controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/controllers/OrderController.php" />
         <option value="$PROJECT_DIR$/views/meals/_search.php" />
         <option value="$PROJECT_DIR$/views/meals/view.php" />
         <option value="$PROJECT_DIR$/views/order/view.php" />
         <option value="$PROJECT_DIR$/views/meals/index.php" />
+        <option value="$PROJECT_DIR$/controllers/OrderController.php" />
       </list>
     </option>
   </component>
@@ -306,18 +302,6 @@
               <item name="assignment" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="meals" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -329,7 +313,7 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="sitecontroller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/SiteController.php&#10;ordercontroll&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;layout&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/views/layouts&#10;order&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Orders.php&#10;users&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Users.php&#10;cont&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;additiontypes&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/AdditionTypes.php&#10;additions&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Additions.php&#10;getorderhas&#9;null&#9;null&#10;ordercont&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;mealscontroller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;addit&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Additions.php&#10;additioncontro&#9;null&#9;null&#10;meals&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Meals.php&#10;user&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Users.php&#10;meal&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;ordersearch&#9;null&#9;null&#10;mealscon&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;ordercontro&#9;null&#9;null&#10;deta&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/widgets/DetailView.php&#10;mealcontrol&#9;null&#9;null&#10;orders&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Orders.php&#10;detail&#9;null&#9;null&#10;view&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/views&#10;web&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config/web.php&#10;login&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/LoginForm.php&#10;sitecon&#9;null&#9;null&#10;urlmana&#9;null&#9;null&#10;rout&#9;null&#9;null&#10;web.php&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config/web.php&#10;yii/log/ta&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/log/Target.php&#10;usersearch&#9;null&#9;null&#10;config&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config&#10;helpers&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/helpers" />
+    <property name="SearchEverywhereHistoryKey" value="order&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;usercon&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/UserController.php&#10;sitecontroller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/SiteController.php&#10;ordercontroll&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;layout&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/views/layouts&#10;users&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Users.php&#10;cont&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;additiontypes&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/AdditionTypes.php&#10;additions&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Additions.php&#10;getorderhas&#9;null&#9;null&#10;ordercont&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;mealscontroller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;addit&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Additions.php&#10;additioncontro&#9;null&#9;null&#10;meals&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Meals.php&#10;user&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Users.php&#10;meal&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;ordersearch&#9;null&#9;null&#10;mealscon&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;ordercontro&#9;null&#9;null&#10;deta&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/widgets/DetailView.php&#10;mealcontrol&#9;null&#9;null&#10;orders&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Orders.php&#10;detail&#9;null&#9;null&#10;view&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/views&#10;web&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config/web.php&#10;login&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/LoginForm.php&#10;sitecon&#9;null&#9;null&#10;urlmana&#9;null&#9;null&#10;rout&#9;null&#9;null&#10;web.php&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config/web.php&#10;yii/log/ta&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/log/Target.php&#10;usersearch&#9;null&#9;null&#10;config&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config&#10;helpers&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/helpers" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -359,12 +343,12 @@
       <workItem from="1546266808260" duration="2161000" />
       <workItem from="1547207087480" duration="24150000" />
       <workItem from="1547721676915" duration="10769000" />
-      <workItem from="1547804093339" duration="7598000" />
+      <workItem from="1547804093339" duration="7745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44678000" />
+    <option name="totallyTimeSpent" value="44825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="745" extended-state="6" />
@@ -397,7 +381,15 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/views/meals/index.php</url>
+          <line>22</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -711,14 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-364">
@@ -732,16 +716,6 @@
         <state relative-caret-position="390">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="51" column="76" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="76" />
-          <folding>
-            <element signature="e#35#60#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -789,9 +763,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/meals/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        <state relative-caret-position="215">
+          <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="181" column="30" lean-forward="true" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
+          <folding>
+            <element signature="e#35#60#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
