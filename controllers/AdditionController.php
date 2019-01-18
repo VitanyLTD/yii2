@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Additions;
 use app\models\AdditionSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -20,6 +21,20 @@ class AdditionController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'view', 'create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                        'allow' => true,
+                        'matchCallback' => function ($rule, $action) {
+                            return !\Yii::$app->user->isGuest
+                                && \Yii::$app->user->identity->is_admin == 1;
+                        },
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
