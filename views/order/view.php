@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = Html::encode(ucwords(strtolower($model->getUser
 
     <?php $form = ActiveForm::begin(); ?>
     <p>
-        <?= Html::a('Settings', ['update', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id], ['class' => 'btn btn-primary']) ?>
+        <?= (Yii::$app->user->identity->is_admin == 1) ? Html::a('Settings', ['update', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id], ['class' => 'btn btn-primary']) : '' ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id], [
             'class' => 'btn btn-danger',
             'data' => [

@@ -16,12 +16,17 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Meals', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= (Yii::$app->user->identity->is_admin == 1) ? Html::a('Create Meals', ['create'], ['class' => 'btn btn-success']) : '' ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'rowOptions' => function ($model, $key, $index, $grid) {
+
+            return ['id' => $model['id'], 'onclick' => 'window.location.href = \'index.php?r=meals/view&id=\' + this.id;'];
+
+        },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -35,7 +40,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                    'class' => 'yii\grid\ActionColumn',
+                    'visible' => (Yii::$app->user->identity->is_admin == 1)
+            ],
         ],
     ]); ?>
 </div>

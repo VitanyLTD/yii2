@@ -38,6 +38,13 @@ class OrderController extends Controller
                         },
                     ],
                     [
+                        'actions' => ['view'],
+                        'allow' => true,
+                        'matchCallback' => function ($rule, $action) {
+                            return \Yii::$app->request->get('user_id') == \Yii::$app->user->identity->id;
+                        },
+                    ],
+                    [
                         'actions' => ['index', 'view', 'create', 'update', 'delete'],
                         'allow' => true,
                         'matchCallback' => function ($rule, $action) {
