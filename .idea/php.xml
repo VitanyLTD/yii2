@@ -70,6 +70,8 @@
       <path value="$PROJECT_DIR$/vendor/nex/yii2-chosen" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/chosen" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/chosen-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery-ui" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-jui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />

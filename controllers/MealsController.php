@@ -92,6 +92,9 @@ class MealsController extends Controller
         $model = new Meals();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if($model->status == 1){
+                $model->updateAll(array('status' => 0), 'id != ' . $model->id);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -112,6 +115,9 @@ class MealsController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if($model->status == 1){
+                $model->updateAll(array('status' => 0), 'id != ' . $model->id);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

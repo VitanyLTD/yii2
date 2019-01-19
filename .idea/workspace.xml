@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="215c7037-0df1-4a46-ab5c-f4fe8a1bc71c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/assignment.iml" afterPath="$PROJECT_DIR$/.idea/assignment.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config/params.php" afterPath="$PROJECT_DIR$/config/params.php" />
-      <change beforePath="$PROJECT_DIR$/config/web.php" afterPath="$PROJECT_DIR$/config/web.php" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/main.php" afterPath="$PROJECT_DIR$/views/layouts/main.php" />
-      <change beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
+      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change beforePath="$PROJECT_DIR$/controllers/MealsController.php" afterPath="$PROJECT_DIR$/controllers/MealsController.php" />
+      <change beforePath="$PROJECT_DIR$/controllers/OrderController.php" afterPath="$PROJECT_DIR$/controllers/OrderController.php" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change beforePath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" />
+      <change beforePath="$PROJECT_DIR$/views/meals/_form.php" afterPath="$PROJECT_DIR$/views/meals/_form.php" />
+      <change beforePath="$PROJECT_DIR$/views/order/_form.php" afterPath="$PROJECT_DIR$/views/order/_form.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,28 +29,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/meals/view.php">
+      <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="3405">
+              <caret line="238" column="30" lean-forward="false" selection-start-line="238" selection-start-column="30" selection-end-line="238" selection-end-column="30" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Schema.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/mysql/Schema.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-              <folding>
-                <marker date="1521657413000" expanded="true" signature="4145:4542" ph="SELECT `s`.`... " />
-                <marker date="1521657413000" expanded="true" signature="11745:12349" ph="SELECT kcu.c... referential_constraints" />
-                <marker date="1521657413000" expanded="true" signature="16302:17503" ph="SELECT `kcu`... KEY_COLUMN_USAGE" />
-                <marker date="1521657413000" expanded="true" signature="16302:18267" ph="SELECT `kcu`... " />
-                <marker date="1521657413000" expanded="true" signature="17510:18243" ph="SELECT `kcu`... KEY_COLUMN_USAGE" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -50,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/web/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+              <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -66,16 +59,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="extensions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/yiisoft/extensions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="59" column="2" lean-forward="false" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -86,21 +69,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="435">
+              <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/web.php">
+      <file leaf-file-name="MealsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controllers/MealsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+            <state relative-caret-position="466">
+              <caret line="102" column="11" lean-forward="false" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -110,7 +93,27 @@
         <entry file="file://$PROJECT_DIR$/config/db.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/order/_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="41" column="15" lean-forward="false" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/meals/_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -120,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/config/params.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -155,9 +158,10 @@
       <find>redirect</find>
       <find>$app-&gt;user</find>
       <find>search</find>
-      <find>error</find>
       <find>dataprovider</find>
       <find>my</find>
+      <find>error</find>
+      <find>meal_id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,12 +180,10 @@
         <option value="$PROJECT_DIR$/views/user/index.php" />
         <option value="$PROJECT_DIR$/models/Users.php" />
         <option value="$PROJECT_DIR$/views/user/_form.php" />
-        <option value="$PROJECT_DIR$/views/meals/_form.php" />
         <option value="$PROJECT_DIR$/views/order/_search.php" />
         <option value="$PROJECT_DIR$/views/addition/_form.php" />
         <option value="$PROJECT_DIR$/views/addition/index.php" />
         <option value="$PROJECT_DIR$/views/order/update.php" />
-        <option value="$PROJECT_DIR$/views/order/_form.php" />
         <option value="$PROJECT_DIR$/controllers/AdditionController.php" />
         <option value="$PROJECT_DIR$/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/views/meals/_search.php" />
@@ -190,13 +192,15 @@
         <option value="$PROJECT_DIR$/models/Orders.php" />
         <option value="$PROJECT_DIR$/views/meals/index.php" />
         <option value="$PROJECT_DIR$/views/meals/view.php" />
-        <option value="$PROJECT_DIR$/controllers/OrderController.php" />
-        <option value="$PROJECT_DIR$/controllers/MealsController.php" />
         <option value="$PROJECT_DIR$/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/vendor/yiisoft/extensions.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/config/params.php" />
         <option value="$PROJECT_DIR$/config/web.php" />
+        <option value="$PROJECT_DIR$/controllers/MealsController.php" />
+        <option value="$PROJECT_DIR$/controllers/OrderController.php" />
+        <option value="$PROJECT_DIR$/views/order/_form.php" />
+        <option value="$PROJECT_DIR$/views/meals/_form.php" />
       </list>
     </option>
   </component>
@@ -276,12 +280,13 @@
       <path value="$PROJECT_DIR$/vendor/nex/yii2-chosen" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/chosen" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/chosen-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery-ui" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-jui" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="683" />
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="683" />
+    <option name="width" value="1366" />
     <option name="height" value="745" />
   </component>
   <component name="ProjectView">
@@ -311,25 +316,19 @@
             <path>
               <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="meals" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
               <item name="assignment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="yiisoft" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="assignment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="assignment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="yiisoft" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="yii2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -342,7 +341,7 @@
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="controller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;ordersearch&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/OrderSearch.php&#10;mealcon&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;order&#9;null&#9;null&#10;delete&#9;null&#9;null&#10;usercon&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/UserController.php&#10;sitecontroller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/SiteController.php&#10;ordercontroll&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;layout&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/views/layouts&#10;users&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Users.php&#10;cont&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;additiontypes&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/AdditionTypes.php&#10;additions&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Additions.php&#10;getorderhas&#9;null&#9;null&#10;ordercont&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;mealscontroller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;addit&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Additions.php&#10;additioncontro&#9;null&#9;null&#10;meals&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Meals.php&#10;user&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Users.php&#10;meal&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;mealscon&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;ordercontro&#9;null&#9;null&#10;deta&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/widgets/DetailView.php&#10;mealcontrol&#9;null&#9;null&#10;orders&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Orders.php&#10;detail&#9;null&#9;null&#10;view&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/views&#10;web&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config/web.php&#10;login&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/LoginForm.php&#10;sitecon&#9;null&#9;null&#10;urlmana&#9;null&#9;null&#10;rout&#9;null&#9;null&#10;web.php&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config/web.php&#10;yii/log/ta&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/log/Target.php&#10;usersearch&#9;null&#9;null&#10;config&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config&#10;helpers&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/helpers" />
+    <property name="SearchEverywhereHistoryKey" value="mealscon&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;order&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;controller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;ordersearch&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/OrderSearch.php&#10;mealcon&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;delete&#9;null&#9;null&#10;usercon&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/UserController.php&#10;sitecontroller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/SiteController.php&#10;ordercontroll&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;layout&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/views/layouts&#10;users&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Users.php&#10;cont&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;additiontypes&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/AdditionTypes.php&#10;additions&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Additions.php&#10;getorderhas&#9;null&#9;null&#10;ordercont&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/OrderController.php&#10;mealscontroller&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;addit&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Additions.php&#10;additioncontro&#9;null&#9;null&#10;meals&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Meals.php&#10;user&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Users.php&#10;meal&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/controllers/MealsController.php&#10;ordercontro&#9;null&#9;null&#10;deta&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/widgets/DetailView.php&#10;mealcontrol&#9;null&#9;null&#10;orders&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/Orders.php&#10;detail&#9;null&#9;null&#10;view&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/views&#10;web&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config/web.php&#10;login&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/models/LoginForm.php&#10;sitecon&#9;null&#9;null&#10;urlmana&#9;null&#9;null&#10;rout&#9;null&#9;null&#10;web.php&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config/web.php&#10;yii/log/ta&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/log/Target.php&#10;usersearch&#9;null&#9;null&#10;config&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/config&#10;helpers&#9;FILE&#9;file:///Users/mwiersma/sites/assignment/vendor/yiisoft/yii2/helpers" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -372,15 +371,16 @@
       <workItem from="1546266808260" duration="2161000" />
       <workItem from="1547207087480" duration="24150000" />
       <workItem from="1547721676915" duration="10769000" />
-      <workItem from="1547804093339" duration="16346000" />
+      <workItem from="1547804093339" duration="20632000" />
+      <workItem from="1547934086745" duration="786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53426000" />
+    <option name="totallyTimeSpent" value="58498000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="745" extended-state="6" />
+    <frame x="0" y="23" width="1366" height="745" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16983895" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -411,7 +411,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -420,7 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8498">
           <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -443,7 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -451,7 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="102" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -515,7 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -551,7 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="56" column="35" lean-forward="false" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -559,7 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2625">
           <caret line="175" column="36" lean-forward="false" selection-start-line="175" selection-start-column="20" selection-end-line="175" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -567,7 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -575,9 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#120#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -585,7 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -593,7 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="36" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -601,15 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-364">
           <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/meals/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -633,7 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -653,14 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/order/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/order/create.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -673,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,17 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#35#60#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -721,21 +679,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/MealsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="75" column="113" lean-forward="false" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="113" />
-          <folding>
-            <element signature="e#35#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,7 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="59" column="2" lean-forward="false" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -759,13 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-          <folding>
-            <marker date="1521657413000" expanded="true" signature="4145:4542" ph="SELECT `s`.`... " />
-            <marker date="1521657413000" expanded="true" signature="11745:12349" ph="SELECT kcu.c... referential_constraints" />
-            <marker date="1521657413000" expanded="true" signature="16302:17503" ph="SELECT `kcu`... KEY_COLUMN_USAGE" />
-            <marker date="1521657413000" expanded="true" signature="16302:18267" ph="SELECT `kcu`... " />
-            <marker date="1521657413000" expanded="true" signature="17510:18243" ph="SELECT `kcu`... KEY_COLUMN_USAGE" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,7 +726,7 @@
     <entry file="file://$PROJECT_DIR$/config/db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -804,7 +742,7 @@
     <entry file="file://$PROJECT_DIR$/web/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -812,15 +750,47 @@
     <entry file="file://$PROJECT_DIR$/config/params.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        <state relative-caret-position="435">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3405">
+          <caret line="238" column="30" lean-forward="false" selection-start-line="238" selection-start-column="30" selection-end-line="238" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/order/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="41" column="15" lean-forward="false" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/meals/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/MealsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="102" column="11" lean-forward="false" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
           <folding />
         </state>
       </provider>

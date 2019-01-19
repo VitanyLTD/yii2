@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\jui\DatePicker;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -12,9 +13,19 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'start_date')->textInput() ?>
+    <?= DatePicker::widget([
+        'model' => $model,
+        'attribute' => 'start_date',
+        //'language' => 'ru',
+        //'dateFormat' => 'yyyy-MM-dd',
+    ]); ?>
 
-    <?= $form->field($model, 'end_date')->textInput() ?>
+    <?= DatePicker::widget([
+        'model' => $model,
+        'attribute' => 'end_date',
+        //'language' => 'ru',
+        //'dateFormat' => 'yyyy-MM-dd',
+    ]); ?>
 
     <?= $form->field($model, 'status')->dropDownList(['0' => 'Closed', '1' => 'Open'],['prompt'=>'Select Option']); ?>
 

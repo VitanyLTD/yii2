@@ -90,62 +90,82 @@ class OrderController extends Controller
     public function actionView($id, $user_id, $meal_id)
     {
         $request = Yii::$app->request;
+        $model = $this->findModel($id, $user_id, $meal_id);
 
-        //return print_r($request->post('additions'));
-        //$get = $request->get();
-        if($request->post('additions') != null){
-            $data = [];
-            $order_id = $request->get('id');
-            $meal_id = $request->get('meal_id');
+        //a meal needs to be open in order to update its orders
+        if($model->getMeal()->one()->status == 1) {
 
-            //Start by deleting the old additions
-            Yii::$app->db
-                ->createCommand()
-                ->delete('orders_has_additions', ['orders_id' => $order_id])
-                ->execute();
+            //check if we received a post with additions
+            if ($request->post('additions') != null) {
 
-            foreach($request->post('additions') as $addition){
-                if(gettype($addition) == 'array'){
-                    foreach($addition as $nestedAddition){
-                        if($nestedAddition != null){
-                            $data[] = [$order_id,$nestedAddition];
+                //status needs to be 1 to be able to edit orders
+                $data = [];
+                $order_id = $request->get('id');
+                $meal_id = $request->get('meal_id');
+
+                //Start by deleting the old additions
+                Yii::$app->db
+                    ->createCommand()
+                    ->delete('orders_has_additions', ['orders_id' => $order_id])
+                    ->execute();
+
+                //build dataset for new additions
+                foreach ($request->post('additions') as $addition) {
+                    if (gettype($addition) == 'array') {
+                        foreach ($addition as $nestedAddition) {
+                            if ($nestedAddition != null) {
+                                $data[] = [$order_id, $nestedAddition];
+                            }
+                        }
+                    } else {
+                        if ($addition != null) {
+                            $data[] = [$order_id, $addition];
                         }
                     }
                 }
-                else {
-                    if($addition != null) {
-                        $data[] = [$order_id, $addition];
-                    }
-                }
 
+                //Insert new additions
+                Yii::$app->db
+                    ->createCommand()
+                    ->batchInsert('orders_has_additions', ['orders_id', 'additions_id'], $data)
+                    ->execute();
+
+
+                //return to meal
+                return $this->redirect(['meals/view', 'id' => $meal_id]);
             }
 
-            //Insert new additions
-            Yii::$app->db
-                ->createCommand()
-                ->batchInsert('orders_has_additions', ['orders_id','additions_id'],$data)
-                ->execute();
+            $modelAdditions = new Additions();
+            $modelAdditionTypes = new AdditionTypes();
+            $searchModel = new AdditionSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-            //return to meal
-            return $this->redirect(['meals/view', 'id' => $meal_id]);
+            return $this->render('view', [
+                'model' => $model,
+                'searchModel' => $searchModel,
+                'modelAdditions' => $modelAdditions,
+                'modelAdditionTypes' => $modelAdditionTypes,
+                'dataProvider' => $dataProvider
+            ]);
         }
-        $modelAdditions = new Additions();
-        $modelAdditionTypes = new AdditionTypes();
-        $searchModel = new AdditionSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('view', [
-            'model' => $this->findModel($id, $user_id, $meal_id),
-            'searchModel' => $searchModel,
-            'modelAdditions' => $modelAdditions,
-            'modelAdditionTypes' => $modelAdditionTypes,
-            'dataProvider' => $dataProvider
-        ]);
+        else {
+            //meal not open; return error
+            return $this->render('//site/error', [
+                'name' => 'Oops!',
+                'message' => 'This meal has already been closed by an Administrator.'
+            ]);
+        }
     }
 
     /**
      * Creates a new Orders model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     *
+     * There are 2 ways of handling a new order:
+     * 1. user
+     *      - automatically select all the values; do not show form first.
+     * 2. admin
+     *      - show form and come back later with post
      * @return mixed
      */
     public function actionCreate()
@@ -162,7 +182,9 @@ class OrderController extends Controller
             $model->meal_id = Yii::$app->request->get('meal_id');
         }
 
-        //if user != admin, apply user_id as well
+        /**
+         * This user is not an administrator; therefore we will select their username.
+         */
         if(Yii::$app->user->identity->is_admin == 0){
             $model->id = null;  //set id to null, just in case
 
@@ -173,18 +195,43 @@ class OrderController extends Controller
                     'message' => 'Missing information! Please contact administrator with Error code #55'
                 ]);
             }
+
+            //meal not open; return error
+            else if(Meals::find()->where(['id' => $model->meal_id])->one()->status != 1){
+                return $this->render('//site/error', [
+                    'name' => 'Oops!',
+                    'message' => 'This meal has already been closed by an Administrator.'
+                ]);
+            }
+
+            //no errors, save model
             else {
-                //save model.
                 if ($model->save()) {
                     return $this->redirect(['view', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id]);
                 }
             }
         }
 
-        //return print_r($model);
+        /**
+         * Process form-contents submitted by administrator
+         */
+        if(Yii::$app->request->post('Orders')['meal_id'] != NULL){
+            //check whether the meal has already been closed or not
+            if(Meals::find()->where(['id' => Yii::$app->request->post('Orders')['meal_id']])->one()->status == 1) {
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id]);
+                //try to save the posted information
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+                    //redirect to new order
+                    return $this->redirect(['view', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id]);
+                }
+            }
+            else {
+                return $this->render('//site/error', [
+                    'name' => 'Oops!',
+                    'message' => 'This meal has already been closed by an Administrator.'
+                ]);
+            }
         }
 
 
@@ -210,19 +257,29 @@ class OrderController extends Controller
         $modelUsers = new Users();
         $modelMeals = new Meals();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id]);
-        }
+        //a meal needs to be open in order to update its orders
+        if($model->getMeal()->one()->status == 1) {
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id, 'user_id' => $model->user_id, 'meal_id' => $model->meal_id]);
+            }
 
-        if(Yii::$app->request->get('meal_id') != null) {
-            $model->meal_id = Yii::$app->request->get('meal_id');
-        }
+            if (Yii::$app->request->get('meal_id') != null) {
+                $model->meal_id = Yii::$app->request->get('meal_id');
+            }
 
-        return $this->render('update', [
-            'model' => $model,
-            'modelUsers' => $modelUsers,
-            'modelMeals' => $modelMeals
-        ]);
+            return $this->render('update', [
+                'model' => $model,
+                'modelUsers' => $modelUsers,
+                'modelMeals' => $modelMeals
+            ]);
+        }
+        else {
+            //meal not open; return error
+            return $this->render('//site/error', [
+                'name' => 'Oops!',
+                'message' => 'This meal has already been closed by an Administrator.'
+            ]);
+        }
     }
 
     /**
@@ -236,9 +293,19 @@ class OrderController extends Controller
      */
     public function actionDelete($id, $user_id, $meal_id)
     {
-        $this->findModel($id, $user_id, $meal_id)->delete();
+        //a meal needs to be open in order to update its orders
+        if(Meals::find()->where(['id' => $meal_id])->one()->status == 1) {
+            $this->findModel($id, $user_id, $meal_id)->delete();
 
-        return $this->redirect(['meals/view', 'id' => $meal_id]);
+            return $this->redirect(['meals/view', 'id' => $meal_id]);
+        }
+        else {
+            //meal not open; return error
+            return $this->render('//site/error', [
+                'name' => 'Oops!',
+                'message' => 'This meal has already been closed by an Administrator.'
+            ]);
+        }
     }
 
     /**

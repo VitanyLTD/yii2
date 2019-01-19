@@ -37,7 +37,7 @@ use yii\widgets\ActiveForm;
     <?= Chosen::widget([
         'name' => 'Orders[meal_id]',
         'id' => 'meal_id',
-        'items' => ArrayHelper::map($modelMeals->find()->asArray()->all(), 'id','start_date'),
+        'items' => ArrayHelper::map($modelMeals->find()->where(['status' => 1])->asArray()->all(), 'id','start_date'),
         'multiple' => false,
         'allowDeselect' => false,
         'disableSearch' => true, // Search input will be disabled
