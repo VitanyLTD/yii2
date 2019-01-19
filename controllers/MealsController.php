@@ -97,9 +97,10 @@ class MealsController extends Controller
             $model->start_date = DateTime::createFromFormat('d/m/Y', $model->start_date)->format('Y-m-d 00:00:00');
             $model->end_date = DateTime::createFromFormat('d/m/Y', $model->end_date)->format('Y-m-d 23:59:59');
 
-            if($model->save()) { {
-            if($model->status == 1){
-                $model->updateAll(array('status' => 0), 'id != ' . $model->id);
+            if($model->save()) {
+                if ($model->status == 1) {
+                    $model->updateAll(array('status' => 0), 'id != ' . $model->id);
+                }
             }
             return $this->redirect(['view', 'id' => $model->id]);
         }

@@ -4,7 +4,6 @@
     <list default="true" id="215c7037-0df1-4a46-ab5c-f4fe8a1bc71c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/controllers/MealsController.php" afterPath="$PROJECT_DIR$/controllers/MealsController.php" />
-      <change beforePath="$PROJECT_DIR$/views/meals/_form.php" afterPath="$PROJECT_DIR$/views/meals/_form.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,12 +17,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/meals/view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/order/view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="810">
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding>
+                <marker date="1547815978672" expanded="true" signature="666:731" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,16 +69,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/web.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,21 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MealsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MealsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/MealsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-518">
-              <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/db.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="245">
+              <caret line="103" column="13" lean-forward="false" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -98,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_form.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/meals/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            <state relative-caret-position="195">
+              <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -188,8 +189,8 @@
         <option value="$PROJECT_DIR$/config/web.php" />
         <option value="$PROJECT_DIR$/controllers/OrderController.php" />
         <option value="$PROJECT_DIR$/views/order/_form.php" />
-        <option value="$PROJECT_DIR$/views/meals/_form.php" />
         <option value="$PROJECT_DIR$/controllers/MealsController.php" />
+        <option value="$PROJECT_DIR$/views/meals/_form.php" />
       </list>
     </option>
   </component>
@@ -366,12 +367,12 @@
       <workItem from="1547207087480" duration="24150000" />
       <workItem from="1547721676915" duration="10769000" />
       <workItem from="1547804093339" duration="20632000" />
-      <workItem from="1547934086745" duration="3535000" />
+      <workItem from="1547934086745" duration="3815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61247000" />
+    <option name="totallyTimeSpent" value="61527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="745" extended-state="0" />
@@ -414,6 +415,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8498">
           <caret line="48" column="6" lean-forward="false" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -652,16 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/order/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <marker date="1547815978672" expanded="true" signature="666:731" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/OrderSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -703,14 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/meals/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,6 +754,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/MealsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="103" column="13" lean-forward="false" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -778,18 +770,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/meals/_form.php">
+    <entry file="file://$PROJECT_DIR$/views/order/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="810">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <marker date="1547815978672" expanded="true" signature="666:731" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/meals/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/MealsController.php">
+    <entry file="file://$PROJECT_DIR$/views/meals/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
-          <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+        <state relative-caret-position="195">
+          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
           <folding />
         </state>
       </provider>
