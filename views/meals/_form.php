@@ -16,15 +16,15 @@ use yii\widgets\ActiveForm;
     <?= DatePicker::widget([
         'model' => $model,
         'attribute' => 'start_date',
-        //'language' => 'ru',
-        //'dateFormat' => 'yyyy-MM-dd',
+        'language' => 'nl',
+        'dateFormat' => 'dd/MM/yyyy',
     ]); ?>
 
     <?= DatePicker::widget([
         'model' => $model,
         'attribute' => 'end_date',
-        //'language' => 'ru',
-        //'dateFormat' => 'yyyy-MM-dd',
+        'language' => 'nl',
+        'dateFormat' => 'dd/MM/yyyy',
     ]); ?>
 
     <?= $form->field($model, 'status')->dropDownList(['0' => 'Closed', '1' => 'Open'],['prompt'=>'Select Option']); ?>
